@@ -1,0 +1,97 @@
+/* ==============================================================================
+ * BẢNG MÃ CSS TÙY CHỈNH CHO PORTFOLIO ĐOÀN CÔNG KHOA
+ * ==============================================================================
+ * Bao gồm:
+ *   1. Họa tiết lưới điểm mờ (Background Grid Pattern)
+ *   2. Hiệu ứng chuyển động ánh sáng mờ (Ambient Glow Animation)
+ *   3. Thanh cuộn trang tối giản (Custom Sleek Scrollbar)
+ *   4. Thẻ kỹ năng & hiệu ứng hover (Skill Badges)
+ *   5. Trạng thái sáng của mục Menu khi cuộn trang (Active Nav Link)
+ *   6. Kính mờ thủy tinh cho thanh Header khi cuộn (Glassmorphism Navbar)
+ *   7. Font chữ Mono cho khối mã lệnh (Code & Pre blocks)
+ * ============================================================================== */
+
+/* [1] Họa tiết lưới điểm mờ sang trọng phía sau nền tối */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* [2] Hiệu ứng ánh sáng vầng hào quang chuyển động bồng bềnh */
+@keyframes ambientFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.06);
+  }
+}
+
+.ambient-glow {
+  animation: ambientFloat 14s ease-in-out infinite alternate;
+}
+
+/* [3] Tùy chỉnh thanh cuộn trang (Scrollbar) chuẩn phong cách Dark Theme */
+::-webkit-scrollbar {
+  width: 8px; /* Độ rộng thanh cuộn */
+}
+
+::-webkit-scrollbar-track {
+  background: #07090e; /* Màu rãnh trượt */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b; /* Màu con trượt */
+  border-radius: 9999px;
+  border: 2px solid #07090e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155; /* Đổi màu sáng hơn khi rê chuột vào */
+}
+
+/* [4] Giao diện thẻ kỹ năng (Skill Badges) trong mục Tech Stack */
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hiệu ứng nổi nhẹ và viền sáng xanh ngọc khi rê chuột vào thẻ kỹ năng */
+.skill-badge:hover {
+  background-color: rgba(30, 41, 59, 0.9);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* [5] Mục Menu đang được kích hoạt tương ứng với phần đang xem (Active Nav Link) */
+.nav-link.active {
+  color: #34d399 !important;
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* [6] Hiệu ứng kính mờ (Glassmorphism) khi cuộn trang xuống */
+.header-scrolled {
+  background-color: rgba(7, 9, 14, 0.85) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: rgba(30, 41, 59, 0.8) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+/* [7] Font chữ lập trình (JetBrains Mono) cho thẻ pre và code */
+pre, code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
